@@ -172,9 +172,9 @@ namespace BlackEdgeCommon.Communication.Bidirectional
             catch (Exception ex)
             {
                 if (_createdPoller)
-                    Logger.GetLogger().Info($"[{nameof(BaseAsyncServer)}] {nameof(ProcessClientMessageHandler)}: Exception processing client message!", ex);
+                    Logger.GetLogger().Info($"[{nameof(BaseAsyncServer)}] {nameof(ProcessClientMessageHandler)}: Exception processing client message! {ex}");
                 else
-                    Logger.GetLogger().Info($"[{nameof(BaseAsyncServer)}] {nameof(ProcessClientMessageHandler)} {_serverAddress}: Exception processing client message!", ex);
+                    Logger.GetLogger().Info($"[{nameof(BaseAsyncServer)}] {nameof(ProcessClientMessageHandler)} {_serverAddress}: Exception processing client message! {ex}");
             }
         }
 

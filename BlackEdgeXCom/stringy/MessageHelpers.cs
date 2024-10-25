@@ -15,7 +15,8 @@ namespace BlackEdgeCommon.Communication
             message.InitPool(maxOutgoingMessageSize);
 
             int messageSize = outgoingMessage.SerializeProtoBufIntoBuffer(message.SliceAsMemory());
-            message.SetSize(messageSize);
+            // Dude, why do we have a custom netmq?
+            // message.SetSize(messageSize);
 
             return messageSize;
         }

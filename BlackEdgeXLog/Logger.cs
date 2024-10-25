@@ -11,6 +11,7 @@
 
         public void Info(string msg)
         {
+            System.Console.WriteLine(msg);
         }
 
     }
