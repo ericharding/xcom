@@ -21,12 +21,21 @@ namespace xcomtest
             }
         }
 
+        private static void sleepForever()
+        {
+            while (true)
+            {
+                Thread.Sleep(1);
+            }
+        }
+
         private static void runClient(string ip, ushort port)
         {
             StringAsyncClient sac = new StringAsyncClient(ip, port);
             sac.ConnectionEstablished += (o, e) => Console.WriteLine("Connection established");
-            // sac.ConnectionFailed +=
-
+            sac.Disconnected += (o, e) => Console.WriteLine($"Disconnected {e}");
+            sac.NewMessageReceived += (o, a) => Console.WriteLine($"New message: {a.Message}");
+            sleepForever();
         }
 
         private static void runServer(string ip, ushort port)
@@ -38,12 +47,8 @@ namespace xcomtest
                 sas.SendCommentedMessageToClients("comment?", "hello new client");
             };
             sas.NewMessageReceived += (o, a) => Console.WriteLine($"New Message: {a.Message}");
-
-
-            while (true)
-            {
-                System.Threading.Thread.Sleep(1);
-            }
+            Console.WriteLine($"Started server on {ip}:{port}");
+            sleepForever();
         }
     }
 
