@@ -10,4 +10,8 @@
     <PackageReference Include="netmq" Version="4.0.1.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlackEdgeXLog\BlackEdgeXLog.csproj" />
+  </ItemGroup>
+
 </Project>

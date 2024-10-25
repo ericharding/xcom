@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlackEdgeCommon.Communication;
 using NetMQ;
 
-namespace BlackedgeCommon.Communication.Bidirectional.TypedCommunication
+namespace BlackEdgeCommon.Communication.Bidirectional.TypedCommunication
 {
     public class BiTypedCommunicatorServer<TToServerMessage, TFromServerMessage> : BaseAsyncServer
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackedgeCommon.Communication.Bidirectional.TypedCommunication
+namespace BlackEdgeCommon.Communication.Bidirectional.TypedCommunication
 {
     public class BiTypedCommunicatorClient<TToServerMessage, TFromServerMessage> : BaseAsyncClient
     {

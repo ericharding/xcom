@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BlackedgeCommon.Communication.Bidirectional
+namespace BlackEdgeCommon.Communication.Bidirectional
 {
     public class BaseAsyncServer : IDisposable
     {

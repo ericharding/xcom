@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackEdgeXCom", "BlackEdgeX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xcomtest", "xcomtest\xcomtest.csproj", "{C3B5632B-177C-45BF-90A7-F8259701FE74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackEdgeXLog", "BlackEdgeXLog\BlackEdgeXLog.csproj", "{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C3B5632B-177C-45BF-90A7-F8259701FE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3B5632B-177C-45BF-90A7-F8259701FE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3B5632B-177C-45BF-90A7-F8259701FE74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

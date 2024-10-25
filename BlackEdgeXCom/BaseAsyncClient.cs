@@ -1,6 +1,9 @@
-﻿using BlackedgeCommon.Utils.Atomic;
+﻿using BlackEdgeCommon.Utils.Atomic;
 using BlackEdgeCommon.Communication;
 using BlackEdgeCommon.Communication.Bidirectional;
+using BlackEdgeCommon.Utils.Extensions;
+using BlackEdgeCommon.Utils.Logging;
+using BlackEdgeCommon.Utils.Networking;
 using NetMQ;
 using NetMQ.Monitoring;
 using NetMQ.Sockets;
@@ -8,7 +11,7 @@ using System;
 using System.Net.Sockets;
 using System.Text;
 
-namespace BlackedgeCommon.Communication.Bidirectional
+namespace BlackEdgeCommon.Communication.Bidirectional
 {
     public class BaseAsyncClient : IDisposable
     {
@@ -100,7 +103,7 @@ namespace BlackedgeCommon.Communication.Bidirectional
             catch (SocketException ex)
             {
                 connectionError = true;
-                Logger.GetLogger().Info($"[{nameof(BaseAsyncClient)}] {nameof(InitSocket)} {_serverAddress} error connecting", ex);
+                Logger.GetLogger().Info($"[{nameof(BaseAsyncClient)}] {nameof(InitSocket)} {_serverAddress} error connecting. {ex}");
                 ConnectionFailed?.Invoke(this, EventArgs.Empty); // Inform downstream subscribers of connection failure - may want to take more drastic action
                 DelayHeartbeatTimer(); // This HeartbeatTimer _will_ expire and fire, since we couldn't connect, but this will delay our reconnect attempt by the heartbeat interval
             }
@@ -280,7 +283,7 @@ namespace BlackedgeCommon.Communication.Bidirectional
             }
             catch (Exception ex)
             {
-                Logger.GetLogger().Info($"[{nameof(BaseAsyncClient)}] {nameof(ProcessServerMessageHandler)}: Exception processing server message!", ex);
+                Logger.GetLogger().Info($"[{nameof(BaseAsyncClient)}] {nameof(ProcessServerMessageHandler)}: Exception processing server message! {ex}");
             }
         }
 
@@ -292,7 +295,7 @@ namespace BlackedgeCommon.Communication.Bidirectional
             }
             catch (Exception ex)
             {
-                Logger.GetLogger().Info($"[{nameof(BaseAsyncClient)}] {nameof(ProcessPaddedServerMessageHandler)}: Exception processing server batch message!", ex);
+                Logger.GetLogger().Info($"[{nameof(BaseAsyncClient)}] {nameof(ProcessPaddedServerMessageHandler)}: Exception processing server batch message! {ex}");
             }
         }
 

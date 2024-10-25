@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BlackedgeCommon.Utils.Atomic
+namespace BlackEdgeCommon.Utils.Atomic
 {
     public class AtomicCountXP
     {
