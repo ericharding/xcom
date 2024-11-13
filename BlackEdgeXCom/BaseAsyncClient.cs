@@ -72,7 +72,7 @@ namespace BlackEdgeCommon.Communication.Bidirectional
         {
             _dealerSocket = new DealerSocket();
 
-            _dealerSocket.Options.TcpKeepalive = true;
+            // _dealerSocket.Options.TcpKeepalive = true;
             _dealerSocket.Options.TcpKeepaliveIdle = TimeSpan.FromSeconds(5);
             _dealerSocket.Options.TcpKeepaliveInterval = TimeSpan.FromSeconds(1);
             _dealerSocket.Options.Linger = TimeSpan.FromSeconds(1);

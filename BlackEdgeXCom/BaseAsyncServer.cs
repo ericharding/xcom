@@ -61,7 +61,7 @@ namespace BlackEdgeCommon.Communication.Bidirectional
         {
             _routerSocket = new RouterSocket();
 
-            _routerSocket.Options.TcpKeepalive = true;
+            // _routerSocket.Options.TcpKeepalive = true;
             _routerSocket.Options.TcpKeepaliveIdle = TimeSpan.FromSeconds(5);
             _routerSocket.Options.TcpKeepaliveInterval = TimeSpan.FromSeconds(1);
             _routerSocket.Options.RouterMandatory = true; // throw if sending to client fails
