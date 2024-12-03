@@ -7,13 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="netmq" Version="4.0.1.13" />
+    <!-- <PackageReference Include="netmq" Version="4.0.1.13" /> -->
     <PackageReference Include="protobuf-net" Version="3.2.45" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BlackEdgeXLog\BlackEdgeXLog.csproj" />
+    <ProjectReference Include="..\netmq\src\NetMQ\NetMQ.csproj" />
   </ItemGroup>
 
 </Project>

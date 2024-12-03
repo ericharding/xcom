@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xcomtest", "xcomtest\xcomte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackEdgeXLog", "BlackEdgeXLog\BlackEdgeXLog.csproj", "{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netmq", "netmq", "{AFEDFD98-6485-4E9E-BA2F-0B78B402759F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84C40118-8331-477D-9C4B-28DB6C8BFE49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetMQ", "netmq\src\NetMQ\NetMQ.csproj", "{0201EAF8-808C-4C52-93F2-447975F3359C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +36,13 @@ Global
 		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE9CB1B7-C8AA-4ADD-B35D-493C227327D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0201EAF8-808C-4C52-93F2-447975F3359C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0201EAF8-808C-4C52-93F2-447975F3359C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0201EAF8-808C-4C52-93F2-447975F3359C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0201EAF8-808C-4C52-93F2-447975F3359C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84C40118-8331-477D-9C4B-28DB6C8BFE49} = {AFEDFD98-6485-4E9E-BA2F-0B78B402759F}
+		{0201EAF8-808C-4C52-93F2-447975F3359C} = {84C40118-8331-477D-9C4B-28DB6C8BFE49}
 	EndGlobalSection
 EndGlobal
