@@ -11,7 +11,10 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/xcomtest/bin/Debug/net8.0/xcomtest.dll",
-            "args": ["--server"],
+            "args": [
+                // "--server",
+                "--client",
+            ],
             "cwd": "${workspaceFolder}/xcomtest",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",

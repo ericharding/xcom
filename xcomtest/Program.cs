@@ -39,9 +39,12 @@ namespace xcomtest
         private static async Task runClient(string ip, ushort port)
         {
             StringAsyncClient sac = new StringAsyncClient(ip, port);
-            sac.ConnectionEstablished += (o, e) => Console.WriteLine("Connection established");
-            sac.Disconnected += (o, e) => Console.WriteLine($"Disconnected {e}");
-            sac.NewMessageReceived += (o, a) => Console.WriteLine($"New message: {a.Message}");
+            sac.ConnectionEstablished += (o, e) => 
+                Console.WriteLine("Connection established");
+            sac.Disconnected += (o, e) => 
+                Console.WriteLine($"Disconnected {e}");
+            sac.NewMessageReceived += (o, a) => 
+                Console.WriteLine($"New message: {a.Message}");
             while (true) { await Task.Delay(100); }
         }
 
