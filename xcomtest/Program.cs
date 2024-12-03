@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 using System.Collections.Specialized;
 using BlackEdgeCommon.Communication.Bidirectional;
@@ -13,12 +13,19 @@ namespace xcomtest
             UInt16 port = 7675;
             if (args.Contains("--server"))
             {
-                runServer(ip, port);
+                Task.Factory.StartNew(() =>
+                {
+                    runServer(ip, port);
+                });
             }
             if (args.Contains("--client"))
             {
-                runClient(ip, port);
+                Task.Factory.StartNew(() =>
+                {
+                    runClient(ip, port);
+                });
             }
+            sleepForever();
         }
 
         private static void sleepForever()
@@ -29,26 +36,30 @@ namespace xcomtest
             }
         }
 
-        private static void runClient(string ip, ushort port)
+        private static async Task runClient(string ip, ushort port)
         {
             StringAsyncClient sac = new StringAsyncClient(ip, port);
             sac.ConnectionEstablished += (o, e) => Console.WriteLine("Connection established");
             sac.Disconnected += (o, e) => Console.WriteLine($"Disconnected {e}");
             sac.NewMessageReceived += (o, a) => Console.WriteLine($"New message: {a.Message}");
-            sleepForever();
+            while (true) { await Task.Delay(100); }
         }
 
-        private static void runServer(string ip, ushort port)
+        private static async Task runServer(string ip, ushort port)
         {
             StringAsyncServer sas = new StringAsyncServer(ip, port);
-            sas.NewClientIdentityConnected += (o, a) =>
+            sas.NewClientIdentityConnected += async (o, a) =>
             {
-                Console.WriteLine($"New client {a}");
-                sas.SendCommentedMessageToClients("comment?", "hello new client");
+                Console.WriteLine($"** New client {a}");
+                while(true) {
+                    await Task.Delay(1000);
+                    Console.WriteLine("Print...");
+                    sas.SendCommentedMessageToClients("comment?", "hello new client");
+                }
             };
             sas.NewMessageReceived += (o, a) => Console.WriteLine($"New Message: {a.Message}");
             Console.WriteLine($"Started server on {ip}:{port}");
-            sleepForever();
+            while (true) { await Task.Delay(100); }
         }
     }
 
